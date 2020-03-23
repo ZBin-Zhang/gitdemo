@@ -22,3 +22,28 @@ def simNGames(n,probA,probB):
         else:
             winsB+=1
     return winsA,winsB
+def simOneGames(probA,probB):
+    scoreA,scoreB=0,0
+    serving='A'
+    while not gameOver(scoreA,scoreB):
+        if serving=='A':
+            if random.random()<probA:
+                scoreA+=1
+            else:
+                scoreB+=1
+                serving='B'
+        else:
+            if random.random()<probB:
+                scoreB+=1
+            else:
+                scoreA+=1
+                serving='A'
+    return scoreA,scoreB
+def gameOver(scoreA,scoreB):
+    return scoreA==15 or scoreB==15
+def printSummary(winsA,winsB):
+    n = winsA + winsB
+    print("竞技分析开始，共模拟{}场比赛".format(n)) 
+    print("选手A获胜{}场比赛，占比{:0.1%}".format(winsA, winsA/n)) 
+    print("选手B获胜{}场比赛，占比{:0.1%}".format(winsB, winsB/n))
+main()
