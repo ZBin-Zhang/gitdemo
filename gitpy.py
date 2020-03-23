@@ -47,3 +47,4 @@ def printSummary(winsA,winsB):
     print("选手A获胜{}场比赛，占比{:0.1%}".format(winsA, winsA/n)) 
     print("选手B获胜{}场比赛，占比{:0.1%}".format(winsB, winsB/n))
 main()
+#good job!zzb2!
